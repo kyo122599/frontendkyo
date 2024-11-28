@@ -1,0 +1,200 @@
+/* Ajuste general del wrapper */
+.wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent; /* Fondo transparente */
+}
+
+/* Botones en las esquinas */
+.boton-auto {
+  position: absolute;
+  width: 140px;
+  height: 100px;
+  background: linear-gradient(135deg, #8B0000, #A52A2A); /* Rojo oscuro y marrón */
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(139, 69, 19, 0.5); /* Sombras suaves */
+  transition: transform 0.3s ease-in-out;
+  animation: seguimiento 10s infinite ease-in-out;
+}
+
+/* Animación de "seguimiento" para el movimiento lento de los botones */
+@keyframes seguimiento {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30vw, 10vh); /* Botón 1 se mueve hacia la derecha */
+  }
+  50% {
+    transform: translate(60vw, 10vh); /* Botón 1 llega a la esquina */
+  }
+  75% {
+    transform: translate(60vw, 40vh); /* Botón 2 sigue el camino del primero */
+  }
+  100% {
+    transform: translate(0, 40vh); /* Regresa a la posición original */
+  }
+}
+
+/* Ajuste de los botones en las esquinas */
+.esquina-superior-izquierda {
+  top: 20px;
+  left: 20px;
+  animation: vibrar 3s infinite alternate;
+}
+
+.esquina-superior-derecha {
+  top: 20px;
+  right: 20px;
+  animation: vibrar 3s infinite alternate-reverse;
+}
+
+.esquina-inferior-izquierda {
+  bottom: 20px;
+  left: 20px;
+  animation: vibrar 3s infinite alternate;
+}
+
+.esquina-inferior-derecha {
+  bottom: 20px;
+  right: 20px;
+  animation: vibrar 3s infinite alternate-reverse;
+}
+
+/* Vibración de botones para simular seguimiento */
+@keyframes vibrar {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -5px);
+  }
+  100% {
+    transform: translate(-10px, 5px);
+  }
+}
+
+/* Iconos de los botones */
+.auto-icon {
+  font-size: 28px; /* Tamaño más grande */
+}
+
+/* Etiqueta del botón */
+.auto-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+}
+
+/* Rotación del botón al presionar */
+.boton-auto:active {
+  animation: rotar 0.6s ease-in-out, cambio-color-boton 0.6s forwards;
+}
+
+@keyframes rotar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animación de cambio de color para los botones */
+@keyframes cambio-color-boton {
+  0% {
+    background: linear-gradient(135deg, #8B0000, #A52A2A); /* Rojo oscuro y marrón */
+  }
+  14% {
+    background: linear-gradient(135deg, #D2691E, #8B4513); /* Naranja y marrón suave */
+  }
+  28% {
+    background: linear-gradient(135deg, #DAA520, #B8860B); /* Amarillo dorado y mostaza */
+  }
+  42% {
+    background: linear-gradient(135deg, #228B22, #6B8E23); /* Verde oscuro y oliva */
+  }
+  57% {
+    background: linear-gradient(135deg, #4682B4, #5F9EA0); /* Azul acero y verde azulado */
+  }
+  71% {
+    background: linear-gradient(135deg, #4B0082, #800080); /* Añil y morado oscuro */
+  }
+  85% {
+    background: linear-gradient(135deg, #9932CC, #8A2BE2); /* Violeta oscuro y azul violeta */
+  }
+  100% {
+    background: linear-gradient(135deg, #8B0000, #A52A2A); /* Regreso a Rojo oscuro y Marrón */
+  }
+}
+
+/* Mensaje centrado con rebote */
+.mensaje {
+  font-size: 18px;
+  color: #000; /* Color del texto en negro */
+  background: #F4F4F4; /* Fondo gris suave para el mensaje */
+  padding: 15px 20px;
+  border-radius: 10px;
+  position: absolute;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Sombras sutiles */
+  animation: rebote-dvd 10s linear infinite, cambio-color-mensaje 10s infinite; /* Añadimos la animación de cambio de color */
+  max-width: 80%; /* Evitar que el mensaje sea demasiado grande */
+  margin: 0 auto;
+}
+
+/* Rebote centrado */
+@keyframes rebote-dvd {
+  0% {
+    transform: translate(40vw, 40vh);
+  }
+  25% {
+    transform: translate(60vw, 40vh);
+  }
+  50% {
+    transform: translate(60vw, 60vh);
+  }
+  75% {
+    transform: translate(40vw, 60vh);
+  }
+  100% {
+    transform: translate(40vw, 40vh);
+  }
+}
+
+/* Animación de cambio de color para el mensaje */
+@keyframes cambio-color-mensaje {
+  0% {
+    background: linear-gradient(135deg, #8B0000, #A52A2A); /* Rojo oscuro y marrón */
+  }
+  14% {
+    background: linear-gradient(135deg, #D2691E, #8B4513); /* Naranja y marrón suave */
+  }
+  28% {
+    background: linear-gradient(135deg, #DAA520, #B8860B); /* Amarillo dorado y mostaza */
+  }
+  42% {
+    background: linear-gradient(135deg, #228B22, #6B8E23); /* Verde oscuro y oliva */
+  }
+  57% {
+    background: linear-gradient(135deg, #4682B4, #5F9EA0); /* Azul acero y verde azulado */
+  }
+  71% {
+    background: linear-gradient(135deg, #4B0082, #800080); /* Añil y morado oscuro */
+  }
+  85% {
+    background: linear-gradient(135deg, #9932CC, #8A2BE2); /* Violeta oscuro y azul violeta */
+  }
+  100% {
+    background: linear-gradient(135deg, #8B0000, #A52A2A); /* Regreso a Rojo oscuro y Marrón */
+  }
+}

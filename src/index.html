@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mibase</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+    body {
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Altura total de la ventana */
+        margin: 0; /* Sin márgenes */
+        font-family: Arial, sans-serif; /* Fuente por defecto */
+        background: linear-gradient(45deg, #9b59b6, #8e44ad, #2980b9, #1abc9c, #34495e); /* Fondo degradado con tonos morados, azules, verdes y gris */
+        background-size: 400% 400%; /* Escala para un efecto de movimiento */
+        animation: fondoAnimado 15s ease infinite; /* Animación para dar movimiento al fondo */
+    }
+
+    @keyframes fondoAnimado {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+</style>
+
+
+
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
